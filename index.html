@@ -83,7 +83,9 @@ main{padding:8px 0 48px}
 .sub.hit,.head.hit{animation:hit 2.6s ease-out}
 @keyframes hit{0%,60%{background:rgba(230,0,26,.14);box-shadow:inset 4px 0 0 var(--red)}100%{background:transparent;box-shadow:inset 4px 0 0 transparent}}
 .chip svg{width:13px;height:13px;stroke:var(--g1);fill:none;stroke-width:2;flex:none}
-.dp{display:inline-block;font-size:.75rem;font-weight:600;color:#fff;background:var(--g1);border-radius:4px;padding:1px 7px;margin-left:4px;vertical-align:1px}
+.dp{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:#fff;background:var(--red);border-radius:5px;padding:2px 10px 2px 8px;margin:0 0 0 6px;vertical-align:middle;white-space:nowrap}
+.dp svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;flex:none}
+.sg.x{box-shadow:inset 4px 0 0 var(--red)}
 .oth{padding:8px 16px;background:var(--g5);color:var(--g1);font-size:.85rem;font-weight:600;border-top:1px solid var(--g4);border-bottom:1px solid var(--g4)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .wi{flex:none;width:22px;height:22px;fill:none;stroke:var(--red);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
@@ -135,14 +137,14 @@ const DATA={
 AS:{names:["Account Support","Account Support"],ex:["emballage","packaging"],cats:[
  {c:"NL-AS-KB",nl:"Klantbeheer",en:"Customer Management",d:["Aanmaken, wijzigen en beheren van klant-, prospect- en leveranciersdata","Creating, updating and maintaining customer, prospect and supplier data"],s:[
   ["Prospect / Nieuwe Locaties","Prospect / New Locations","Aanmaken van prospects en nieuwe locaties, excl. onboarding","Creating prospects and new locations, excluding onboarding","NL-AS-1010"],
-  ["Klantgegevens (mutaties)","Customer Data Changes","Wijzigen van klantdata, leverafspraken en extra leverdagen","Changes to customer data, delivery agreements and extra delivery days","NL-AS-1020"],
+  ["Klantgegevens (Mutaties)","Customer Data Changes","Wijzigen van klantdata, leverafspraken en extra leverdagen","Changes to customer data, delivery agreements and extra delivery days","NL-AS-1020"],
   ["Leverancier","Supplier Management","Aanmaken, wijzigen en emballagebeheer van leveranciers","Creating, updating and managing supplier returnable packaging","NL-AS-1030"],
   ["CC Mail","CC Mail","Account Support staat in de cc en er wordt geen actie verwacht","Account Support is in CC; no action required","NL-AS-1040"]]},
- {c:"NL-AS-AP",nl:"Artikel- , Prijs- & Contractbeheer",en:"Product, Pricing & Contract Management",d:["Beheer van artikelen, assortimenten, prijzen, contracten en productinfo","Managing products, assortments, pricing, contracts and product data"],s:[
-  ["Beheren Assortiment","Assortiment Management","Beheer van PIM, PAD, LL.nl en klantsystemen","Managing data in PIM, PAD, LL.nl and customer systems","NL-AS-2010"],
-  ["Product Informatie","Product Information","Beheer van prijsregels, artikeldata, listings en klantbestanden","Managing pricing rules, product data, listings and customer files","NL-AS-2020"],
+ {c:"NL-AS-AP",nl:"Artikel-, Prijs- & Contractbeheer",en:"Product, Pricing & Contract Management",d:["Beheer van artikelen, assortimenten, prijzen, contracten en productinfo","Managing products, assortments, pricing, contracts and product data"],s:[
+  ["Beheren Assortiment","Assortment Management","Beheer van PIM, PAD, LL.nl en klantsystemen","Managing data in PIM, PAD, LL.nl and customer systems","NL-AS-2010"],
+  ["Productinformatie","Product Information","Beheer van prijsregels, artikeldata, listings en klantbestanden","Managing pricing rules, product data, listings and customer files","NL-AS-2020"],
   ["Prijswijzigingen","Price Changes","Verwerking van prijsmutaties, PKB-regels en toeslagen","Processing price changes, PKB rules and surcharges","NL-AS-2030"],
-  ["CC mail","CC mail","Account Support staat in de cc en er wordt geen actie verwacht","Account Support is in CC; no action required","NL-AS-2040"]]},
+  ["CC Mail","CC Mail","Account Support staat in de cc en er wordt geen actie verwacht","Account Support is in CC; no action required","NL-AS-2040"]]},
  {c:"NL-AS-OL",nl:"Orders & Leveringen",en:"Orders & Deliveries",d:["Vragen over orders, leveringen, voorraad en operationele verstoringen","Questions about orders, deliveries, stock and operational disruptions"],s:[
   ["Orders","Orders","Handmatige orders, HK-bestellingen en extra leveringen","Manual orders, HK orders and additional deliveries","NL-AS-3010"],
   ["Klantspecifieke Acties","Customer Promotions","Pushorders, campagneacties en actiecommunicatie","Push orders, campaigns and promotional communication","NL-AS-3020"],
@@ -158,40 +160,40 @@ AS:{names:["Account Support","Account Support"],ex:["emballage","packaging"],cat
   ["CC Mail","CC Mail","Account Support staat in de cc en er wordt geen actie verwacht","Account Support is in CC; no action required","NL-AS-4050"]]},
  {c:"NL-AS-RA",nl:"Rapportages & Analyses",en:"Reporting & Analytics",d:["Verzoeken voor informatievoorziening, rapportages en data-analyses","Requests for reporting, information and data analysis"],s:[
   ["Rapportagevragen","Reporting Questions","Vragen over aangeleverde rapportages","Questions regarding provided reports","NL-AS-5010"],
-  ["Rapportageverzoeken","Reporting Requests","Verzoek om een niet-standaard rapportages","Requests for non-standard reports","NL-AS-5020"],
+  ["Rapportageverzoeken","Reporting Requests","Verzoek om een niet-standaard rapportage","Requests for non-standard reports","NL-AS-5020"],
   ["Analyses","Analyses","Ad-hoc onderzoek en diepgaande klantvragen","Ad hoc investigations and detailed customer inquiries","NL-AS-5030"],
-  ["Report Out","Report Out","Rapportage richting Account Management / Verkoopadviseur","Reporting to Account Management/Sales","NL-AS-5040"],
+  ["Report Out","Report Out","Rapportage richting Account Management / Verkoopadviseur","Reporting to Account Management / Sales","NL-AS-5040"],
   ["CC Mail","CC Mail","Account Support staat in de cc en er wordt geen actie verwacht","Account Support is in CC; no action required","NL-AS-5050"]]},
  {c:"NL-AS-PR",nl:"Projecten",en:"Projects",d:["Tijdelijke of projectmatige werkzaamheden buiten de reguliere processen","Temporary or project-based activities outside regular operations"],s:[
   ["Onboarding","Onboarding","Communicatie rond onboarding van nieuwe organisaties","Communication related to onboarding new organizations","NL-AS-6010"],
   ["Feestdagen","Holidays","Communicatie rondom feestdagen","Communication related to holiday periods","NL-AS-6020"],
   ["Routeoptimalisatie","Route Optimization","Communicatie rondom routeoptimalisatie","Communication related to route optimization","NL-AS-6030"],
   ["Communicatie","Communication","Algemene communicatie, zoals snelwegafsluitingen en weersituaties","General communication, e.g. road closures and weather updates","NL-AS-6040"],
-  ["Nieuwe projecten","New Projects","Projectmatige werkzaamheden binnen afdeling of Lekkerland","Project-based activities within the department or Lekkerland","NL-AS-6050"]]}
+  ["Nieuwe Projecten","New Projects","Projectmatige werkzaamheden binnen afdeling of Lekkerland","Project-based activities within the department or Lekkerland","NL-AS-6050"]]}
 ]},
 EVA:{names:["EVA","EVA"],ex:["fraude","fraud"],cats:[
- {c:"NL-EV-TA",nl:"Technische storingen & activatie",en:"Technical Incidents & Activation",d:["Algemene technische storingen en activatieproblemen","General technical incidents and activation issues"],s:[
-  ["Non-scan / scanfout","Scan Error","Kaart wordt niet herkend door hardware of scanfout door gebruiker","Card not recognized by device or user scanning error","NL-EV-1010"],
-  ["Hardware/Software klacht","Hardware/Software Issue","Terminal-, kassa- of andere technische storingen","Terminal, POS or other technical issues","NL-EV-1020"]]},
- {c:"NL-EV-FB",nl:"Financieel & facturatie",en:"Finance & Billing",d:["Algemene financiële en facturatievraagstukken","General finance and billing inquiries"],s:[
-  ["Facturatie & financiële afwikkeling","Billing & Financial Settlement","Facturen, disputen, doorbelasting en matchingverschillen","Invoices, disputes, recharges and reconciliation differences","NL-EV-2010"],
-  ["Onjuiste activatie/bedrag","Incorrect Activation/Amount","Foutieve activatie of onjuist bedrag","Incorrect activation or amount processed","NL-EV-2020"],
-  ["Handmatige factuurverzoeken","Manual Invoice Requests","Verzoeken voor crediteren of belasten vanuit Finance","Requests for credits or manual charges from Finance","NL-EV-2030"],
-  ["CRP-verwerking / Batch retouren","CRP Processing / Batch Returns","Periodieke retourbestanden zoals CRP's en retour belkaarten","Processing periodic return files such as CRPs and returned cards","NL-EV-2040"]]},
- {c:"NL-EV-CM",nl:"Klant- & locatiebeheer",en:"Customer & Location Management",d:["Algemene werkzaamheden voor klant- en locatiebeheer","General customer and location management activities"],s:[
-  ["Opvoer klant","Customer Creation","Nieuwe klant of winkelopening","New customer registration or store opening","NL-EV-3010"],
+ {c:"NL-EV-TA",nl:"Technische Storingen & Activatie",en:"Technical Incidents & Activation",d:["Algemene technische storingen en activatieproblemen","General technical incidents and activation issues"],s:[
+  ["Non-scan / Scanfout","Scan Error","Kaart wordt niet herkend door hardware of scanfout door gebruiker","Card not recognized by device or user scanning error","NL-EV-1010"],
+  ["Hardware / Software Klacht","Hardware / Software Issue","Terminal-, kassa- of andere technische storingen","Terminal, POS or other technical issues","NL-EV-1020"]]},
+ {c:"NL-EV-FB",nl:"Financieel & Facturatie",en:"Finance & Billing",d:["Algemene financiële en facturatievraagstukken","General finance and billing inquiries"],s:[
+  ["Facturatie & Financiële Afwikkeling","Billing & Financial Settlement","Facturen, disputen, doorbelasting en matchingverschillen","Invoices, disputes, recharges and reconciliation differences","NL-EV-2010"],
+  ["Onjuiste Activatie / Bedrag","Incorrect Activation / Amount","Foutieve activatie of onjuist bedrag","Incorrect activation or amount processed","NL-EV-2020"],
+  ["Handmatige Factuurverzoeken","Manual Invoice Requests","Verzoeken voor crediteren of belasten vanuit Finance","Requests for credits or manual charges from Finance","NL-EV-2030"],
+  ["CRP-verwerking / Batchretouren","CRP Processing / Batch Returns","Periodieke retourbestanden zoals CRP's en retourbelkaarten","Processing periodic return files such as CRPs and returned cards","NL-EV-2040"]]},
+ {c:"NL-EV-CM",nl:"Klant- & Locatiebeheer",en:"Customer & Location Management",d:["Algemene werkzaamheden voor klant- en locatiebeheer","General customer and location management activities"],s:[
+  ["Klant Opvoeren","Customer Creation","Nieuwe klant of winkelopening","New customer registration or store opening","NL-EV-3010"],
   ["Winkelovername","Store Transfer","Nieuwe eigenaar en koppeling aan nieuw debiteurennummer","New owner and reassignment to customer account","NL-EV-3020"],
-  ["Saneren klant","Customer Closure","Ontkoppelen, beëindigen of afsluiten van klanten","Customer termination, closure or disconnection","NL-EV-3030"],
-  ["Wijziging NAW / facturatiegegevens","Address/Billing Change","Wijzigingen in adres-, contact- of factuurgegevens","Changes to address, contact or billing details","NL-EV-3040"]]},
- {c:"NL-EV-CA",nl:"Commercieel, logistiek & assortiment",en:"Commercial, Logistics & Assortment",d:["Algemene commerciële, logistieke en assortimentsvragen","General commercial, logistics and assortment inquiries"],s:[
-  ["Bulk activatieverzoek","Bulk Activation Request","Bulkactivaties voor acties, ketens of feestdagen","Bulk activations for campaigns, chains or holidays","NL-EV-4010"],
-  ["Assortiment-/bestelproblemen Betapress","Betapress Assortment/Order Issue","Artikel niet bestelbaar of beschikbaarheidsprobleem","Item unavailable, blocked or not orderable","NL-EV-4020"],
-  ["Assortiment-/bestelproblemen Lekkerland","Lekkerland Assortment/Order Issue","Artikel niet bestelbaar of beschikbaarheidsprobleem","Item unavailable, blocked or not orderable","NL-EV-4030"],
-  ["Logistiek / leveringsprobleem Betapress","Betapress Delivery Issue","Verstoringen rondom levering of distributie","Delivery or distribution disruption","NL-EV-4040"],
-  ["Logistiek / leveringsprobleem Lekkerland","Lekkerland Delivery Issue","Verstoringen rondom levering of distributie","Delivery or distribution disruption","NL-EV-4050"]]},
+  ["Saneren Klant","Customer Closure","Ontkoppelen, beëindigen of afsluiten van klanten","Customer termination, closure or disconnection","NL-EV-3030"],
+  ["Wijziging NAW / Facturatiegegevens","Address / Billing Change","Wijzigingen in adres-, contact- of factuurgegevens","Changes to address, contact or billing details","NL-EV-3040"]]},
+ {c:"NL-EV-CA",nl:"Commercieel, Logistiek & Assortiment",en:"Commercial, Logistics & Assortment",d:["Algemene commerciële, logistieke en assortimentsvragen","General commercial, logistics and assortment inquiries"],s:[
+  ["Bulkactivatieverzoek","Bulk Activation Request","Bulkactivaties voor acties, ketens of feestdagen","Bulk activations for campaigns, chains or holidays","NL-EV-4010"],
+  ["Assortiment- / Bestelproblemen Betapress","Betapress Assortment / Order Issue","Artikel niet bestelbaar of beschikbaarheidsprobleem","Item unavailable, blocked or not orderable","NL-EV-4020"],
+  ["Assortiment- / Bestelproblemen Lekkerland","Lekkerland Assortment / Order Issue","Artikel niet bestelbaar of beschikbaarheidsprobleem","Item unavailable, blocked or not orderable","NL-EV-4030"],
+  ["Logistiek / Leveringsprobleem Betapress","Betapress Delivery Issue","Verstoringen rondom levering of distributie","Delivery or distribution disruption","NL-EV-4040"],
+  ["Logistiek / Leveringsprobleem Lekkerland","Lekkerland Delivery Issue","Verstoringen rondom levering of distributie","Delivery or distribution disruption","NL-EV-4050"]]},
  {c:"NL-EV-FR",nl:"Fraude",en:"Fraud",d:["Algemene fraudemeldingen","General fraud reports"],s:[
-  ["Vordering (politie)","Police Request","Politieverzoek ten behoeve van fraudeonderzoek","Police request related to fraud investigation","NL-EV-5010"],
-  ["Telefonische fraude","Phone Fraud","Telefoonfraude of fraudepoging","Telephone fraud or attempted fraud","NL-EV-5020"],
+  ["Vordering (Politie)","Police Request","Politieverzoek ten behoeve van fraudeonderzoek","Police request related to fraud investigation","NL-EV-5010"],
+  ["Telefonische Fraude","Phone Fraud","Telefoonfraude of fraudepoging","Telephone fraud or attempted fraud","NL-EV-5020"],
   ["Diefstal","Theft","Diefstal en verzoeken tot blokkering","Theft cases and blocking requests","NL-EV-5030"]]}
 ]},
 KS:{names:["Klantenservice","Customer Care"],wip:true,ex:["promotie","promotie"],cats:[
@@ -211,6 +213,10 @@ const DEPT_ORDER=["AS","EVA","KS"];
    Versie en datum in de voettekst volgen automatisch het bovenste blok. */
 const AUTHOR="Arnoud van Rooij";
 const CHANGELOG=[
+ {v:"1.5.3",date:"2026-10-11",changes:["Zoekterm wordt nu ook gehighlight in de hoofdcategorie die achter een subcategorie staat","Alle gevonden resultaten worden getoond (geen limiet van 8 meer), met bovenaan het aantal resultaten"]},
+ {v:"1.5.2",date:"2026-10-11",changes:["Rode waarschuwing (LET OP! + afdelingsnaam) weer op dezelfde regel als de gevonden naam, naast de categorie"]},
+ {v:"1.5.1",date:"2026-10-11",changes:["Zoeken in andere afdelingen toont nu alle treffers (tot 8 per afdeling) in plaats van 3","Treffers uit een andere afdeling krijgen een rode waarschuwing met uitroepteken, LET OP! en de afdelingsnaam, plus een rode rand links"]},
+ {v:"1.5.0",date:"2026-10-11",changes:["Brondata gecorrigeerd: spelfouten, samenstellingen, hoofdletters (Title Case in de Nederlandse namen) en spaties rond slashes; zie C4C_Wijzigingen.xlsx"]},
  {v:"1.4.0",date:"2026-10-10",changes:["Kop met logo en titel blijft in beeld tijdens scrollen (vaste kop)","Mobiel: categoriekaart hersteld (omschrijving op volle breedte, code eronder), compactere kop, afdelings- en taalknoppen over volle breedte","Zoeken: bij geen resultaat ook zoeken in de andere afdelingen, met afdelingsnaam en wisselen met één klik","Zoeken: tolerant voor typfouten, omgewisselde letters en codes met extra tekens (bijv. NL-AS-1010Lm of NL AS 1010)","Toegankelijkheid zoekveld: combobox-rollen, geselecteerde suggestie en aantal resultaten worden voorgelezen, aria-controls bij categorieën"]},
  {v:"1.3.5",date:"2026-10-10",changes:["Engelse afdelingsnaam Klantenservice gecorrigeerd naar Customer Care","Voorbeeldwoord en voorbeeldcode in het zoekveld zonder aanhalingstekens, zodat ze gelijk worden weergegeven"]},
  {v:"1.3.4",date:"2026-10-10",changes:["Afdelingsnamen in de afdelingsbalk zijn vertaalbaar per taal (Klantenservice wordt Customer Support); per afdeling instelbaar via names in DATA"]},
@@ -238,12 +244,12 @@ nl:{title:"C4C Categoriekiezer",intro:"Vind de juiste categorie en code voor je 
  ph:"Zoek op woord, omschrijving of code, bijvoorbeeld {word} of {code}",
  list:"Categorieën",expand:"Alles uitvouwen",collapse:"Alles inklappen",copy:"Kopieer code",copied:"Gekopieerd: ",
  none:"Geen resultaat voor",tip:"Probeer een ander woord of een deel van de code.",main:"Hoofdcategorie",sub:"Subcategorie",
- n1:"subcategorie",nn:"subcategorieën",wip:"Let op: de categorieën van deze afdeling worden nog aangevuld.",version:"Versie",by:"Gemaakt door",at:"bij",others:"Wel gevonden bij een andere afdeling:",res:"suggesties",search:"Zoeken",clear:"Zoekopdracht wissen"},
+ n1:"subcategorie",nn:"subcategorieën",wip:"Let op: de categorieën van deze afdeling worden nog aangevuld.",version:"Versie",by:"Gemaakt door",at:"bij",found:"resultaten",warn:"LET OP!",others:"Wel gevonden bij een andere afdeling:",res:"suggesties",search:"Zoeken",clear:"Zoekopdracht wissen"},
 en:{title:"C4C Category Finder",intro:"Find the right category and code for your ticket.",dept:"Department",lang:"Language",
  ph:"Search by word, description or code, for example {word} or {code}",
  list:"Categories",expand:"Expand all",collapse:"Collapse all",copy:"Copy code",copied:"Copied: ",
  none:"No results for",tip:"Try another word or part of the code.",main:"Main category",sub:"Subcategory",
- n1:"subcategory",nn:"subcategories",wip:"Note: the categories for this department are still being completed.",version:"Version",by:"Created by",at:"in",others:"Found in another department:",res:"suggestions",search:"Search",clear:"Clear search"}
+ n1:"subcategory",nn:"subcategories",wip:"Note: the categories for this department are still being completed.",version:"Version",by:"Created by",at:"in",found:"results",warn:"ATTENTION!",others:"Found in another department:",res:"suggestions",search:"Search",clear:"Clear search"}
 };
 
 let dept="KS",lang="nl",open=new Set(),focus=false,results=[],cursor=-1;
@@ -258,6 +264,7 @@ const codePrefix=()=>DATA[dept].cats[0].c.split("-").slice(0,2).join("-");
 const deptName=k=>DATA[k].names[lang==="en"?1:0];
 const norm=s=>(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 const copyIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>';
+const warnSm='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18.5v.5"/></svg>';
 const warnIcon='<svg class="wi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18.5v.5"/></svg>';
 const chip=code=>`<button class="chip" data-copy="${esc(code)}" title="${esc(T[lang].copy)}" aria-label="${esc(T[lang].copy)} ${esc(code)}">${esc(code)}${copyIcon}</button>`;
 
@@ -375,11 +382,11 @@ function search(q,k,limit){
 function lookup(q){
  const cd=extractCode(q);
  if(cd){for(const k of DEPT_ORDER){const hit=itemsOf(k).find(it=>it.code===cd);if(hit)return k===dept?{own:[hit],other:[]}:{own:[],other:[hit]}}}
- const own=search(q,dept,8);
+ const own=search(q,dept,Infinity);
  if(own.length)return{own,other:[]};
  let other=[];
- DEPT_ORDER.forEach(k=>{if(k!==dept)other=other.concat(search(q,k,3))});
- return{own:[],other:other.slice(0,6)};
+ DEPT_ORDER.forEach(k=>{if(k!==dept)other=other.concat(search(q,k,Infinity))});
+ return{own:[],other:other};
 }
 function hl(text,q){
  let h=esc(text);
@@ -395,17 +402,17 @@ function renderSug(hide){
  if(hide||!stripQ(q)){showSug(false);results=[];setStatus("");return}
  const r=lookup(q);
  results=r.own.concat(r.other);cursor=results.length?0:-1;
- const row=(x,k)=>`<div class="sg${k===cursor?" on":""}" id="sg-${k}" data-k="${k}" role="option" aria-selected="${k===cursor}">
-  <div class="r1"><span><b>${hl(x.name,q)}</b> <span class="path">${x.j<0?esc(t.main):esc(x.cat)}</span>${x.dk!==dept?` <span class="dp">${esc(deptName(x.dk))}</span>`:""}</span><button class="chip" data-copy="${esc(x.code)}" title="${esc(t.copy)}" aria-label="${esc(t.copy)} ${esc(x.code)}">${hl(x.code,q)}${copyIcon}</button></div>
+ const row=(x,k)=>`<div class="sg${k===cursor?" on":""}${x.dk!==dept?" x":""}" id="sg-${k}" data-k="${k}" role="option" aria-selected="${k===cursor}">
+  <div class="r1"><span><b>${hl(x.name,q)}</b> <span class="path">${x.j<0?esc(t.main):hl(x.cat,q)}</span> ${x.dk!==dept?`<span class="dp">${warnSm}<b>${esc(t.warn)}</b> ${esc(deptName(x.dk))}</span>`:""}</span><button class="chip" data-copy="${esc(x.code)}" title="${esc(t.copy)}" aria-label="${esc(t.copy)} ${esc(x.code)}">${hl(x.code,q)}${copyIcon}</button></div>
   ${x.def?`<div class="df">${hl(x.def.length>110?x.def.slice(0,107)+"…":x.def,q)}</div>`:""}</div>`;
  let html="";
  if(r.own.length){
-  html=r.own.map((x,k)=>row(x,k)).join("");
+  html=`<div class="oth">${r.own.length} ${esc(t.found)}</div>`+r.own.map((x,k)=>row(x,k)).join("");
   setStatus(r.own.length+" "+t.res);
  }else{
   const msg=`${t.none} "${q.trim()}" ${t.at} ${deptName(dept)}`;
   html=`<div class="empty"><b>${esc(msg)}</b>${r.other.length?"":`<br>${esc(t.tip)}`}</div>`;
-  if(r.other.length)html+=`<div class="oth">${esc(t.others)}</div>`+r.other.map((x,n)=>row(x,n)).join("");
+  if(r.other.length)html+=`<div class="oth">${esc(t.others)} ${r.other.length} ${esc(t.found)}</div>`+r.other.map((x,n)=>row(x,n)).join("");
   setStatus(msg+(r.other.length?". "+t.others:""));
  }
  box.innerHTML=html;
